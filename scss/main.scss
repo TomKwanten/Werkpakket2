@@ -1,0 +1,519 @@
+$font-family: 'IBM Plex Sans', sans-serif;
+$primary-color: #fff;
+$secundary-color: #000;
+$text-color: $primary-color;
+$tertiary-color: #cd1d66;
+$border-afronding: 15px;
+$border: 3px solid $tertiary-color;
+$buttonhover: #980341;
+$font-lg: 50px;
+$font-md: 30px;
+$font-sm: 15px;
+
+@mixin product-container() {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secundary-color;
+    max-width: 80%;
+    padding: 20 20 10; 
+}
+
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+}
+
+h2 { 
+    font-size: $font-md;
+}
+
+/*STARTPAGINA*/
+/* stijl voor navigatie*/
+header {
+    background-color: $primary-color;
+    color: $text-color;
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+
+    h1 {
+        margin-bottom: 10px;
+        font-size: $font-lg;
+        color: $secundary-color;
+    }
+}
+
+.nav {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+
+    
+}
+
+.nav li {
+    display: inline; 
+    margin-right: 20px; 
+}
+
+.nav button {
+    background-color: $secundary-color;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: $border-afronding;
+}
+
+.nav a {
+    text-decoration: none;
+    color: $text-color; 
+}
+
+
+/* stijl voor beschrijving */
+.section-beschrijving{
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+/* stijl voor product */
+.titel-producten{
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.product-section-start{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secundary-color;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: $border-afronding;
+}
+
+.product-start {
+    display: block;
+    border: $border;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    width: 48%;
+    background-color: $primary-color;
+    border-radius: $border-afronding;
+    padding-top: 25px;
+    
+    img{
+        max-width: 20%;
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: $secundary-color;
+    color: $primary-color;
+    text-align: center;
+    padding: 10px 0;
+
+    p {
+        margin: 10;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+
+        span {
+            margin: 0 20px;
+        }
+    }
+}
+
+/*responsive*/
+@media (max-width: 768px) {
+    body{
+        font-size: $font-sm;
+    }
+    /*header*/
+    header {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: $font-md; 
+    }
+    /*navigatie*/
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav li {
+        margin-top: 10px; 
+    }
+
+    .nav button {
+        padding: 10px 20px;
+        display: block; 
+    }
+
+    /*startpagina*/
+    .section-beschrijving {
+        padding: 10px;
+    }
+
+    .product-section-start {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .product-start {
+        width: 80%; 
+    }
+
+    .product-start img {
+        max-width: 100%; 
+    }
+
+    /*footer*/
+    footer {
+        .contact-info {
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center;
+        }
+    }
+}
+
+/*OVERZICHTSPAGINA*/
+
+.container-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    /*padding-left: 75px;
+    padding-right: 75px;*/
+    padding: 0 50 20 50;
+    border-top: 10px solid $secundary-color;
+    border-bottom: 10px solid $secundary-color;
+}
+
+.container-product1{
+    @include product-container();
+    
+}
+
+.container-product2{
+    @include product-container();
+    /*display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secundary-color;
+    max-width: 80%;
+    padding: 20 20 10;*/
+}
+
+.container-product3{
+    @include product-container();
+    border-bottom-right-radius: $border-afronding;
+    border-bottom-left-radius: $border-afronding;
+    margin-bottom: 50px;
+}
+
+.product {
+    display: block;
+    border: $border;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+    width: 48%;
+    background-color: $primary-color;
+    border-radius: $border-afronding;
+    padding-top: 25px;
+    
+    img{
+        width: 20%;
+        height: 38%;
+    }
+
+    span{
+        font-weight: bold;
+    }
+}
+
+.product-link {
+    text-decoration: none; 
+    color: $secundary-color;
+
+    &:hover{
+    text-decoration: underline;
+    color: $tertiary-color;     
+    }
+}
+
+/*responsive*/
+@media screen and (max-width: 768px) {
+    .container-product1,
+    .container-product2,
+    .container-product3 {
+        @include product-container();
+        padding: 10px 10px 0;
+
+        .product {
+            width: 100%;
+            margin: 5px;
+
+            img {
+                width: 50%;
+                height: auto;
+            }
+        }
+    }
+}
+
+/*filter*/
+.container-form{
+    display: flex;
+    justify-content: left;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secundary-color;
+    max-width: 80%;
+    padding: 20 20 10 20;
+    color: $text-color;
+    border-top-right-radius: $border-afronding;
+    border-top-left-radius: $border-afronding;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: $border;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: $tertiary-color;
+    color: $primary-color;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    
+    &:hover { 
+        background-color: $buttonhover;
+    }
+}
+
+/*responsive filter*/
+@media screen and (max-width: 768px) {
+    .container-form {
+        flex-direction: column;
+        max-width: 80%;                 /*deze breedte komt niet overeen met de breedte van de producten
+                                            terwijl ze wel allebij max-width 80% hebben?*/
+        margin: auto;
+        label,
+        select,
+        input[type="submit"] {
+            width: 100%;
+        }
+
+        select {
+            margin: 10px 0;
+        }
+    }
+}
+
+/*PRODUCTPAGINA*/
+.product-details {
+    background-color: $secundary-color;
+    color: $text-color;
+    max-width: 50%;
+    margin: auto;
+    margin-bottom: 260px;
+    margin-top: 100;
+    padding: 20px;
+    border: 3px solid $tertiary-color;
+    border-radius: $border-afronding;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        margin-left: 10px;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    p{
+        max-width: 600px;
+    }
+
+    .product-content {
+        display: flex;
+
+        img {
+            max-width: 300px;
+            margin-right: 40px;
+            margin-top: 0px;
+            height: auto;
+        }
+
+        .description {
+            flex: 1;
+
+            p {
+                margin: 0;
+            }
+
+            .price {
+                font-weight: bold;
+                margin-top: 30px;
+            }
+
+            .add-to-cart {
+                background-color: $tertiary-color;
+                color: $text-color;
+                border: none;
+                margin-top: 5px;
+                padding: 10px 20px;
+                border-radius: 7px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $buttonhover;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .product-details{
+        max-width: 90%;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        align-items: center;
+        h2{
+            font-size: $font-md;
+            text-align: center;
+        }
+        p{
+            font-size: $font-sm;
+            max-width: 100%;
+            text-align: center;
+        }
+        .product-content{
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 80%;
+            margin: auto;
+            
+            img{
+                max-width: 100%; /*ik kan de afbeelding hier niet in het midden centreren*/
+                display: block;
+                margin: 0 auto;
+                margin-right: 20px;
+            }
+            .add-to-cart{
+                margin: 0 auto; 
+                display: block; 
+            }
+        }
+    }
+}
+
+/*LOGINPAGINA*/
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 210px;
+}
+
+.login-form {
+    background-color: $secundary-color;
+    color: $text-color;
+    padding: 20px;
+    border: $border;
+    border-radius: $border-afronding;
+    text-align: center;
+
+    h2 {
+        font-size: $font-md;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: $border;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: $tertiary-color;
+            color: $text-color;
+            border: none;
+            padding: 10px 20px;
+            border-radius: $border-afronding;
+            cursor: pointer;
+            margin-top: 10px;
+
+            &:hover {
+                background-color: $buttonhover;
+            }
+        }
+    }
+
+    p {
+        margin-top: 20px;
+
+        a {
+            text-decoration: none;
+            color: $tertiary-color;
+        }
+    }
+}
