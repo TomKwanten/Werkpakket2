@@ -1,5 +1,5 @@
 <script>
-export default { //kdkdkdkd
+export default { 
     data() {
       return {
         beschrijving:{
