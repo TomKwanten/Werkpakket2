@@ -1,0 +1,195 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "title": "Zwarte buckethat",
+        "description": "Rave hoed",
+        "image": "src/assets/images/RAVEON_LIGHT.png",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 50,
+        "color": "zwart"
+      },
+      {
+        "id": "2",
+        "title": "Zwarte bril",
+        "description": "Rave bril",
+        "image": "src/assets/images/images.jpg",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 30,
+        "color": "zwart"
+      },
+      {
+        "id": "3",
+        "title": "Zwarte heuptas",
+        "description": "Rave tas",
+        "image": "src/assets/images/download.jpg",
+        "price": "€19.99",
+        "vat": 0.21,
+        "stock": 20,
+        "color": "zwart"
+      },
+      {
+        "id": "4",
+        "title": "Zwarte waaier",
+        "description": "Rave waaier",
+        "image": "src/assets/images/impr_977827-PDP.jpg",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 40,
+        "color": "zwart"
+      },
+      {
+        "id": "5",
+        "title": "Wiet buckethat",
+        "description": "Rave hoed",
+        "image": "src/assets/images/pet2.jpg",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 25
+      },
+      {
+        "id": "6",
+        "title": "Gekleurde bril",
+        "description": "Rave bril",
+        "image": "src/assets/images/bril2.jpg",
+        "price": "€19.99",
+        "vat": 0.21,
+        "stock": 35
+      },
+      {
+        "id": "7",
+        "title": "Holografische heuptas",
+        "description": "Rave tas",
+        "image": "src/assets/images/tas2.jpg",
+        "price": "€24.99",
+        "vat": 0.21,
+        "stock": 15
+      },
+      {
+        "id": "8",
+        "title": "Gekleurde waaier",
+        "description": "Rave waaier",
+        "image": "src/assets/images/waaier2.jpg",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 45
+      },
+      {
+        "id": "9",
+        "title": "Zwarte pet",
+        "description": "Rave hoed",
+        "image": "src/assets/images/pet3.jpg",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 28,
+        "color": "zwart"
+      },
+      {
+        "id": "10",
+        "title": "Space-bril",
+        "description": "Rave bril",
+        "image": "src/assets/images/bril3.jpg",
+        "price": "€24.99",
+        "vat": 0.21,
+        "stock": 18
+      },
+      {
+        "id": "11",
+        "title": "Zwarte heuptas met patronen",
+        "description": "Rave tas",
+        "image": "src/assets/images/tas3.jpg",
+        "price": "€19.99",
+        "vat": 0.21,
+        "stock": 22,
+        "color": "zwart"
+      },
+      {
+        "id": "12",
+        "title": "Holografische waaier",
+        "description": "Rave waaier",
+        "image": "src/assets/images/waaier3.jpg",
+        "price": "€19.99",
+        "vat": 0.21,
+        "stock": 38
+      },
+      {
+        "id": "13",
+        "title": "Blauwe pet",
+        "description": "Rave hoed",
+        "image": "src/assets/images/blauwe_pet.jpg",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 42,
+        "color": "blauw"
+      },
+      {
+        "id": "14",
+        "title": "Skibril",
+        "description": "Rave bril",
+        "image": "src/assets/images/skibril.png",
+        "price": "€19.99",
+        "vat": 0.21,
+        "stock": 15
+      },
+      {
+        "id": "15",
+        "title": "Blauwe heuptas",
+        "description": "Rave tas",
+        "image": "src/assets/images/blauwe_heuptas.jpg",
+        "price": "€19.99",
+        "vat": 0.21,
+        "stock": 38,
+        "color": "blauw"
+      },
+      {
+        "id": "16",
+        "title": "Blauwe waaier",
+        "description": "Rave waaier",
+        "image": "src/assets/images/blauwe_waaier.jpg",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 27,
+        "color": "blauw"
+      },
+      {
+        "id": "17",
+        "title": "Blauwe hoed",
+        "description": "Rave hoed",
+        "image": "src/assets/images/blauwe_hoed.png",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 32,
+        "color": "blauw"
+      },
+      {
+        "id": "18",
+        "title": "Blauwe bril",
+        "description": "Rave bril",
+        "image": "src/assets/images/blauwe_bril.png",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 43,
+        "color": "blauw"
+      },
+      {
+        "id": "19",
+        "title": "Roze heuptas",
+        "description": "Rave tas",
+        "image": "src/assets/images/roze_heuptas.png",
+        "price": "€19.99",
+        "vat": 0.21,
+        "stock": 19
+      },
+      {
+        "id": "20",
+        "title": "Roze waaier",
+        "description": "Rave waaier",
+        "image": "src/assets/images/roze_waaier.jpg",
+        "price": "€14.99",
+        "vat": 0.21,
+        "stock": 38
+      }
+    ]
+  }

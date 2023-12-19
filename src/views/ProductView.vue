@@ -16,7 +16,7 @@ export default {
 </script>
 <template>
     <section class="product-details">
-        <h2>Zwarte buckethat</h2>
+        <h2>{{ product.titel }}</h2>
         <div class="product-content">
             <img src="./assets/RAVEON_LIGHT.png" alt="Petten en hoedjes" class="product">
             <div class="description">
