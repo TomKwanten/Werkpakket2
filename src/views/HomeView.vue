@@ -9,7 +9,6 @@ export default {
             p2: 'Rave-brillen zijn populaire accessoires die vaak worden gedragen op raves. Deze brillen zijn ontworpen om visueel opvallend en soms experimenteel te zijn, en ze kunnen de ervaring van lichtshows en visuele effecten verbeteren.',
             p3: 'Rave-tasjes zijn kleine tassen of heuptasjes die speciaal zijn ontworpen voor gebruik op raves. Deze tasjes zijn praktisch, stijlvol en ideaal om enkele essentiële items bij je te dragen terwijl je aan het raven bent.',
             p4: 'Rave-waaiers zijn populaire accessoires op raves. Ze zijn ontworpen om verkoeling te bieden, stijlvol te zijn en te dienen als een visueel statement.',
-            //link: 'overzicht.html'
         },
         petten: {
             titel: 'Petten en hoeden',
@@ -46,7 +45,6 @@ export default {
         <p>{{ beschrijving.p3 }}</p>
         <p>{{ beschrijving.p4 }}</p>
         <router-link to="/overzicht">Ontdek hier</router-link>
-        <!--<a v-bind:href="beschrijving.link">Ontdek hier</a>-->
     </section>
     <router-view></router-view>
     <br>

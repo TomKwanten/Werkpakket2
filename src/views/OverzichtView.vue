@@ -1,10 +1,51 @@
+<script>
+  import productsData from '../../products.json';
+  
+  export default {
+    data() {
+      return {
+        beschrijving: {
+          titel: "Welkom bij RaveWear",
+          beschrijving:
+            "Bij RaveWear begrijpen we de opwinding en vrijheid die gepaard gaan met het beleven van raves. Wij zijn trots om een uitgebreide online winkel voor ravers aan te bieden waar de nieuwste en de meest opwindende rave-kleding en accessoires te vinden zijn.",
+        },
+        filter: {
+          productType: "alle",
+          productColor: "alle",
+        },
+        products: productsData.products,
+      };
+    },
+    computed: {
+      filteredProducts() {
+        const filtered = this.products.filter((product) => {
+          const typeCondition =
+            this.filter.productType === "alle" || product.productType === this.filter.productType;
+          const colorCondition =
+            this.filter.productColor === "alle" || product.color.toLowerCase() === this.filter.productColor;
+  
+          return typeCondition && colorCondition;
+        });
+  
+        console.log("Filtered Products:", filtered);
+  
+        return filtered;
+      },
+    },
+    methods: {
+      filterProducts() {
+      },
+    },
+  };
+</script>
+
 <template>
     <section class="container-intro">
       <h1>{{ beschrijving.titel }}</h1>
       <p>{{ beschrijving.beschrijving }}</p>
     </section>
     <br>
-    <form class="container-form" @submit.prevent="applyFilter">
+    <form class="container-form" @submit.prevent="filterProducts">
       <label for="product-type">Soort product:</label>
       <select v-model="filter.productType" id="product-type">
         <option value="alle">Alle</option>
@@ -22,7 +63,7 @@
         <option value="overig">Overige kleuren</option>
       </select>
   
-      <input type="submit" value="Filteren">
+      <button type="submit">Filteren</button>
     </form>
   
     <section class="container-product1">
@@ -35,55 +76,6 @@
       </div>
     </section>
   </template>
-  
-  <script>
-  import productsData from '../../products.json';
-  
-  export default {
-    data() {
-      return {
-        beschrijving: {
-          titel: "Welkom bij RaveWear",
-          beschrijving:
-            "Bij RaveWear begrijpen we de opwinding en vrijheid die gepaard gaan met het beleven van raves. Wij zijn trots om een uitgebreide online winkel voor ravers aan te bieden waar de nieuwste en de meest opwindende rave-kleding en accessoires te vinden zijn.",
-        },
-        filter: {
-          productType: "alle",
-          productColor: "alle",
-        },
-        shouldFilter: false, // Nieuwe vlag
-        products: productsData.products,
-      };
-    },
-    computed: {
-      filteredProducts() {
-        if (!this.shouldFilter) {
-          return this.products;
-        }
-  
-        const filtered = this.products.filter((product) => {
-          const typeCondition =
-            this.filter.productType === "alle" ||
-            product.description.toLowerCase() === this.filter.productType;
-          const colorCondition =
-            this.filter.productColor === "alle" ||
-            product.color.toLowerCase() === this.filter.productColor;
-  
-          return typeCondition && colorCondition;
-        });
-  
-        console.log("Filtered Products:", filtered);
-  
-        return filtered;
-      },
-    },
-    methods: {
-      applyFilter() {
-        this.shouldFilter = true;
-      },
-    },
-  };
-  </script>
   
   <style scoped></style>
   

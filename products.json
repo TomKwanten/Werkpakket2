@@ -8,7 +8,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 50,
-        "color": "zwart"
+        "color": "zwart",
+        "productType": "hoedjes"
       },
       {
         "id": "2",
@@ -18,7 +19,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 30,
-        "color": "zwart"
+        "color": "zwart",
+        "productType": "brillen"
       },
       {
         "id": "3",
@@ -28,7 +30,8 @@
         "price": "€19.99",
         "vat": 0.21,
         "stock": 20,
-        "color": "zwart"
+        "color": "zwart",
+        "productType": "tasjes"
       },
       {
         "id": "4",
@@ -38,7 +41,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 40,
-        "color": "zwart"
+        "color": "zwart",
+        "productType": "waaiers"
       },
       {
         "id": "5",
@@ -48,7 +52,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 25,
-        "color": "overig"
+        "color": "overig",
+        "productType": "hoedjes"
       },
       {
         "id": "6",
@@ -58,7 +63,8 @@
         "price": "€19.99",
         "vat": 0.21,
         "stock": 35,
-        "color": "overig"
+        "color": "overig",
+        "productType": "brillen"
       },
       {
         "id": "7",
@@ -68,7 +74,8 @@
         "price": "€24.99",
         "vat": 0.21,
         "stock": 15,
-        "color": "overig"
+        "color": "overig",
+        "productType": "tasjes"
       },
       {
         "id": "8",
@@ -78,7 +85,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 45,
-        "color": "overig"
+        "color": "overig",
+        "productType": "waaiers"
       },
       {
         "id": "9",
@@ -88,7 +96,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 28,
-        "color": "zwart"
+        "color": "zwart",
+        "productType": "hoedjes"
       },
       {
         "id": "10",
@@ -98,7 +107,8 @@
         "price": "€24.99",
         "vat": 0.21,
         "stock": 18,
-        "color": "overig"
+        "color": "overig",
+        "productType": "brillen"
       },
       {
         "id": "11",
@@ -108,7 +118,8 @@
         "price": "€19.99",
         "vat": 0.21,
         "stock": 22,
-        "color": "zwart"
+        "color": "zwart",
+        "productType": "tasjes"
       },
       {
         "id": "12",
@@ -118,7 +129,8 @@
         "price": "€19.99",
         "vat": 0.21,
         "stock": 38,
-        "color": "overig"
+        "color": "overig",
+        "productType": "waaiers"
       },
       {
         "id": "13",
@@ -128,7 +140,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 42,
-        "color": "blauw"
+        "color": "blauw",
+        "productType": "hoedjes"
       },
       {
         "id": "14",
@@ -138,7 +151,8 @@
         "price": "€19.99",
         "vat": 0.21,
         "stock": 15,
-        "color": "overig"
+        "color": "overig",
+        "productType": "brillen"
       },
       {
         "id": "15",
@@ -148,7 +162,8 @@
         "price": "€19.99",
         "vat": 0.21,
         "stock": 38,
-        "color": "blauw"
+        "color": "blauw",
+        "productType": "tasjes"
       },
       {
         "id": "16",
@@ -158,7 +173,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 27,
-        "color": "blauw"
+        "color": "blauw",
+        "productType": "waaiers"
       },
       {
         "id": "17",
@@ -168,7 +184,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 32,
-        "color": "blauw"
+        "color": "blauw",
+        "productType": "hoedjes"
       },
       {
         "id": "18",
@@ -178,7 +195,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 43,
-        "color": "blauw"
+        "color": "blauw",
+        "productType": "brillen"
       },
       {
         "id": "19",
@@ -188,7 +206,8 @@
         "price": "€19.99",
         "vat": 0.21,
         "stock": 19,
-        "color": "overig"
+        "color": "overig",
+        "productType": "tasjes"
       },
       {
         "id": "20",
@@ -198,7 +217,8 @@
         "price": "€14.99",
         "vat": 0.21,
         "stock": 38,
-        "color": "overig"
+        "color": "overig",
+        "productType": "waaiers"
       }
     ]
   }
