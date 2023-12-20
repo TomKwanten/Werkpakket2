@@ -16,7 +16,6 @@ export default {
         <ul>
             <li><button><router-link to="/home">Startpagina</router-link></button></li>
             <li><button><router-link to="/overzicht">In de aanbieding</router-link></button></li>
-            <li><button><router-link to="/detail">Product</router-link></button></li>
             <li><button><router-link to="/login">Inloggen</router-link></button></li>
         </ul>
         </nav>
