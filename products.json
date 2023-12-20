@@ -47,7 +47,8 @@
         "image": "src/assets/images/pet2.jpg",
         "price": "€14.99",
         "vat": 0.21,
-        "stock": 25
+        "stock": 25,
+        "color": "overig"
       },
       {
         "id": "6",
@@ -56,7 +57,8 @@
         "image": "src/assets/images/bril2.jpg",
         "price": "€19.99",
         "vat": 0.21,
-        "stock": 35
+        "stock": 35,
+        "color": "overig"
       },
       {
         "id": "7",
@@ -65,7 +67,8 @@
         "image": "src/assets/images/tas2.jpg",
         "price": "€24.99",
         "vat": 0.21,
-        "stock": 15
+        "stock": 15,
+        "color": "overig"
       },
       {
         "id": "8",
@@ -74,7 +77,8 @@
         "image": "src/assets/images/waaier2.jpg",
         "price": "€14.99",
         "vat": 0.21,
-        "stock": 45
+        "stock": 45,
+        "color": "overig"
       },
       {
         "id": "9",
@@ -93,7 +97,8 @@
         "image": "src/assets/images/bril3.jpg",
         "price": "€24.99",
         "vat": 0.21,
-        "stock": 18
+        "stock": 18,
+        "color": "overig"
       },
       {
         "id": "11",
@@ -112,7 +117,8 @@
         "image": "src/assets/images/waaier3.jpg",
         "price": "€19.99",
         "vat": 0.21,
-        "stock": 38
+        "stock": 38,
+        "color": "overig"
       },
       {
         "id": "13",
@@ -131,7 +137,8 @@
         "image": "src/assets/images/skibril.png",
         "price": "€19.99",
         "vat": 0.21,
-        "stock": 15
+        "stock": 15,
+        "color": "overig"
       },
       {
         "id": "15",
@@ -180,7 +187,8 @@
         "image": "src/assets/images/roze_heuptas.png",
         "price": "€19.99",
         "vat": 0.21,
-        "stock": 19
+        "stock": 19,
+        "color": "overig"
       },
       {
         "id": "20",
@@ -189,7 +197,8 @@
         "image": "src/assets/images/roze_waaier.jpg",
         "price": "€14.99",
         "vat": 0.21,
-        "stock": 38
+        "stock": 38,
+        "color": "overig"
       }
     ]
   }
