@@ -6,15 +6,15 @@
           <li v-for="item in cart" :key="item.id" class="cart-item">
             <img :src="item.image" :alt="item.title" class="cart-item-image">
             <div class="cart-item-details">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
-                <label for="quantity">Aantal:</label>
-                <input type="number" v-model="item.quantity" min="1" @change="updateQuantity(item)">
-                <button @click="removeFromCart(item)">Verwijderen</button>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              <label for="quantity">Aantal:</label>
+              <input type="number" v-model="item.quantity" min="1" @change="updateQuantity(item)">
+              <button @click="removeFromCart(item)">Verwijderen</button>
             </div>
             <div class="cart-item-subtotal">
-                <p>Subtotaal: {{ formatCurrency(subtotal(item)) }}</p>
-                <p>BTW (21%): {{ formatCurrency(subtotal(item) * 0.21) }}</p>
+              <p>Subtotaal: {{ formatCurrency(subtotal(item)) }}</p>
+              <p>BTW (21%): {{ formatCurrency(subtotal(item) * 0.21) }}</p>
             </div>
           </li>
         </ul>
@@ -22,9 +22,7 @@
           <p>Totale prijs: {{ formatCurrency(totalPrice) }}</p>
           <p>Totale BTW (21%): {{ formatCurrency(totalPrice * 0.21) }}</p>
         </div>
-        <router-link to="/checkout">
-            <button v-if="cart.length > 0" @click="confirmShopping">Bevestigen en afrekenen</button>
-        </router-link>
+        <button v-if="cart.length > 0" @click="confirmShopping">Bevestigen en betalen</button>
       </div>
       <p v-else>Winkelmandje is leeg. Voeg producten toe om door te gaan met afrekenen.</p>
     </div>
@@ -32,11 +30,19 @@
   
   <script>
   import { useProductStore } from '../stores/productStore';
+  import { useRouter } from 'vue-router';
   
   export default {
+    setup() {
+      const router = useRouter();
+  
+      return {
+        router,
+      };
+    },
     computed: {
       cart() {
-        return useProductStore().cart.map(item => ({
+        return useProductStore().cart.map((item) => ({
           id: item.id,
           title: item.title,
           description: item.description,
@@ -59,6 +65,8 @@
       confirmShopping() {
         console.log('Winkelen bevestigen...');
         // Hier kun je de afhandeling voor het bevestigen van het winkelen toevoegen
+        // Bijvoorbeeld, je kunt de gebruiker doorsturen naar de checkoutpagina:
+        this.router.push('/checkout');
       },
       subtotal(item) {
         return item.quantity * parseFloat(item.price.replace('€', '').replace(',', '.'));
@@ -94,7 +102,5 @@
   .cart-total {
     margin-top: 20px;
   }
-  
-  /* Voeg eventueel meer stijlen toe voor de weergave van het winkelmandje */
   </style>
   

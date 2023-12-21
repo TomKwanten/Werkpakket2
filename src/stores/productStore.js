@@ -5,28 +5,38 @@ export const useProductStore = defineStore({
   id: 'product',
   state: () => ({
     selectedProduct: null,
-    products: [], // Jouw lijst met producten
-    cart: [],     // Jouw winkelwagen
+    cart: [], // Je lijst met producten in het winkelmandje
   }),
   actions: {
     setSelectedProduct(product) {
       this.selectedProduct = product;
     },
-    getProductById(productId) {
-      // Zoek het product op basis van het ID in de lijst van producten
-      return this.products.find(product => product.id === productId);
-    },
-    addToCart(item) {
-      this.cart.push(item);
-    },
-    updateCart(updatedItem) {
-      const index = this.cart.findIndex(item => item.id === updatedItem.id);
-      if (index !== -1) {
-        this.cart[index] = updatedItem;
+    addToCart(product) {
+      const existingItem = this.cart.find(item => item.id === product.id);
+
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        this.cart.push({
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          quantity: 1,
+        });
       }
     },
     removeFromCart(productId) {
-      this.cart = this.cart.filter(item => item.id !== productId);
+      const index = this.cart.findIndex(item => item.id === productId);
+
+      if (index !== -1) {
+        this.cart.splice(index, 1);
+      }
+    },
+    resetCart() {
+      this.cart = [];
+    },
+    getCart() {
+      return this.cart;
     },
   },
 });

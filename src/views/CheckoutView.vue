@@ -19,10 +19,23 @@
         <!-- Adresgegevens formulier -->
         <h3>Adresgegevens</h3>
         <form @submit.prevent="submitOrder">
-          <!-- ... (rest van het formulier blijft hetzelfde) -->
+          <!-- Naam, adres, stad, postcode inputvelden (gegevens voor verzending) -->
+            <label for="name">Naam:</label>
+            <input type="text" id="name" v-model="shippingInfo.name" required>
+
+            <label for="address">Adres:</label>
+            <input type="text" id="address" v-model="shippingInfo.address" required>
+
+            <label for="city">Stad:</label>
+            <input type="text" id="city" v-model="shippingInfo.city" required>
+
+            <label for="postalCode">Postcode:</label>
+            <input type="text" id="postalCode" v-model="shippingInfo.postalCode" required>
+
   
           <!-- Checkbox voor verschillende facturatiegegevens -->
-          <label for="differentBilling">Facturatiegegevens verschillend:</label>
+          <br>
+          <br>
           <div class="checkbox-wrapper">
             <input type="checkbox" id="differentBilling" v-model="differentBilling" @change="toggleBillingForm">
             <span class="checkbox-label">Verschillend</span>
@@ -31,7 +44,19 @@
           <!-- Facturatiegegevens formulier (wordt alleen weergegeven als differentBilling actief is) -->
           <div v-if="differentBilling">
             <h3>Facturatiegegevens</h3>
-            <!-- ... (rest van het formulier blijft hetzelfde) -->
+            <!-- Naam, adres, stad, postcode inputvelden (gegevens voor facturatie) -->
+            <label for="billingName">Naam:</label>
+            <input type="text" id="billingName" v-model="billingInfo.name">
+
+            <label for="billingAddress">Adres:</label>
+            <input type="text" id="billingAddress" v-model="billingInfo.address">
+
+            <label for="billingCity">Stad:</label>
+            <input type="text" id="billingCity" v-model="billingInfo.city">
+
+            <label for="billingPostalCode">Postcode:</label>
+            <input type="text" id="billingPostalCode" v-model="billingInfo.postalCode">
+       
           </div>
   
           <!-- Bestellingsoverzicht -->
@@ -50,6 +75,8 @@
   
   <script>
   import { useProductStore } from '../stores/productStore';
+  import { useRouter } from 'vue-router';
+
   
   export default {
     data() {
@@ -89,6 +116,7 @@
         console.log('Facturatiegegevens:', this.billingInfo);
         // Reset het winkelmandje na het plaatsen van de bestelling
         useProductStore().resetCart();
+        this.$router.push('/bevestiging');
       },
       toggleBillingForm() {
         // Schakel het facturatiegegevens formulier in/uit op basis van de checkbox
