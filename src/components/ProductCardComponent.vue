@@ -51,6 +51,12 @@ import productsData from "../../products.json";
 
 
 export default {
+  props: {
+    productsData: Array,
+  },
+  mounted() {
+    console.log(this.productsData); // Voeg dit toe
+  },
   data() {
     return {
       beschrijving: {
@@ -96,10 +102,7 @@ export default {
       this.currentPage += value;
     },
     updateSelectedProduct(product) {
-      // Voeg deze regel toe
       console.log('Selected product:', product);
-
-      // Roep de setSelectedProduct-actie aan
       useProductStore().setSelectedProduct(product);
     },
   }
@@ -107,5 +110,4 @@ export default {
 </script>
 
 <style scoped>
-/* Voeg hier je stijlen toe */
 </style>

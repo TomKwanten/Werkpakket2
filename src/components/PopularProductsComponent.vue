@@ -1,40 +1,36 @@
 <template>
   <div>
     <section class="popular-products">
+      {{ productsData }}
       <div v-for="product in popularProducts" :key="product.id" class="product">
-        <a :href="'product.html?id=' + product.id" class="product-link">
+        <router-link :to="`/product/${product.id}`" class="product-link">
           <img :src="product.image" :alt="product.title">
           <h3>{{ product.title }}</h3>
           <span class="price">{{ product.price }}</span>
-        </a>
+        </router-link>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import productsData from '../../products.json';
-
 export default {
-  data() {
-    return {
-      products: productsData.products,
-    };
+  props: {
+    productsData: Array,
   },
   computed: {
     popularProducts() {
-      // Sorteer de producten op basis van de hoeveelheid voorraad (stock) in aflopende volgorde
-      const sortedProducts = this.products.sort((a, b) => b.stock - a.stock);
-
-      // Neem de top 4 populairste producten
+      const sortedProducts = this.productsData ? this.productsData.sort((a, b) => b.stock - a.stock) : [];
       const top4Products = sortedProducts.slice(0, 4);
-
+      console.log('Top 4 products:', top4Products);
       return top4Products;
     },
+  },
+  mounted() {
+    console.log('Received productsData in PopularProductsComponent:', this.productsData);
   },
 };
 </script>
 
 <style scoped>
-/* Voeg indien nodig stijlen toe voor de opmaak van de populaire producten */
 </style>
