@@ -10,6 +10,11 @@
           <label for="quantity">Aantal:</label>
           <input v-model="quantity" type="number" id="quantity" min="1" :max="product.stock">
           <button class="add-to-cart" @click="addToCart">Toevoegen aan winkelwagen</button>
+
+          <!-- Nieuwe sectie voor de melding -->
+          <div v-if="addedToCartMessage" class="added-to-cart-message">
+            {{ addedToCartMessage }}
+          </div>
         </div>
       </div>
     </section>
@@ -23,6 +28,7 @@ export default {
   data() {
     return {
       quantity: 1,
+      addedToCartMessage: null,
     };
   },
   computed: {
@@ -35,18 +41,22 @@ export default {
       const selectedProduct = useProductStore().selectedProduct;
 
       if (selectedProduct && this.quantity > 0 && this.quantity <= selectedProduct.stock) {
-        // Voeg product toe aan winkelmandje in de store
         useProductStore().addToCart({
           id: selectedProduct.id,
           title: selectedProduct.title,
           price: selectedProduct.price,
           quantity: this.quantity,
         });
-
-        // Pas de voorraadstatus aan in de store
         useProductStore().updateStock(selectedProduct.id, this.quantity);
+
+        // Toon melding aan gebruiker
+        this.addedToCartMessage = `${this.quantity} ${selectedProduct.title} is toegevoegd aan het winkelmandje.`;
+
+        // Reset melding na enkele seconden
+        setTimeout(() => {
+          this.addedToCartMessage = null;
+        }, 6000);
       } else {
-        // Toon een melding dat het product niet aan het winkelmandje kan worden toegevoegd
         console.warn('Kan product niet aan winkelmandje toevoegen. Controleer de voorraad en het aantal.');
       }
     },
@@ -57,5 +67,10 @@ export default {
 <style scoped>
 .product-title {
   color: white;
+}
+
+.added-to-cart-message {
+  color: green; /* Of gebruik de gewenste kleur voor de melding */
+  margin-top: 10px;
 }
 </style>
