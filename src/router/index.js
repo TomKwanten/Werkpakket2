@@ -5,6 +5,7 @@ import DetailView from '@/views/DetailView.vue';
 import CartView from '@/views/CartView.vue';
 import CheckoutView from '@/views/CheckoutView.vue'
 import BevestigingView from '@/views/BevestigingView.vue';
+import LoginView from '@/views/LoginView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -36,6 +37,10 @@ const router = createRouter({
         {
             path: '/bevestiging',
             component: BevestigingView,
+        },
+        {
+            path: '/login',
+            component: LoginView,
         }
     ]
 });
