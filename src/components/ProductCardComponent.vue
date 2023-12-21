@@ -28,11 +28,11 @@
 
     <section class="container-product1">
       <div v-for="product in paginatedProducts" :key="product.id" class="product">
-        <a :href="'product.html?id=' + product.id" class="product-link">
+        <router-link :to="`/product/${product.id}`" @click="updateSelectedProduct(product)">
           <img :src="product.image" :alt="product.title">
           <h3>{{ product.title }}</h3>
           <span class="price">{{ product.price }}</span>
-        </a>
+        </router-link>
       </div>
     </section>
 
@@ -45,7 +45,10 @@
 </template>
 
 <script>
+import { useProductStore } from '../stores/productStore';
 import productsData from "../../products.json";
+
+
 
 export default {
   data() {
@@ -88,13 +91,19 @@ export default {
   },
   methods: {
     filterProducts() {
-      // Voeg hier indien nodig extra logica toe voor het filteren
     },
     changePage(value) {
       this.currentPage += value;
     },
-  },
-};
+    updateSelectedProduct(product) {
+      // Voeg deze regel toe
+      console.log('Selected product:', product);
+
+      // Roep de setSelectedProduct-actie aan
+      useProductStore().setSelectedProduct(product);
+    },
+  }
+}
 </script>
 
 <style scoped>

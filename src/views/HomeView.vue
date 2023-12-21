@@ -12,10 +12,9 @@
   
       <router-view></router-view>
   
-      <h2 class="titel-producten">Populaire producten</h2>
+      <h2 class="titel-producten">{{product.titel}}</h2>
       <section class="product-section-start">
-        <!-- Vervang de onderstaande regel met de PopularProductsComponent -->
-        <popular-products-component></popular-products-component>
+        <PopularProductsComponent></PopularProductsComponent>
       </section>
     </div>
 </template>
@@ -37,6 +36,9 @@
           p3: 'Rave-tasjes zijn kleine tassen of heuptasjes die speciaal zijn ontworpen voor gebruik op raves. Deze tasjes zijn praktisch, stijlvol en ideaal om enkele essentiële items bij je te dragen terwijl je aan het raven bent.',
           p4: 'Rave-waaiers zijn populaire accessoires op raves. Ze zijn ontworpen om verkoeling te bieden, stijlvol te zijn en te dienen als een visueel statement.',
         },
+        product: {
+          titel: "Populaire producten"
+        }
       };
     },
   };
