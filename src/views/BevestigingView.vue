@@ -10,8 +10,8 @@
         </li>
       </ul>
   
-      <!-- Toon de totale prijs -->
-      <p>Totale prijs: {{ totalPrice }}</p>
+      <!-- Totale prijs blijft 0, geen idee wat hier het probleem is -->
+      <p>Totale prijs: {{ calculateTotalPrice() }}</p>
     </div>
   </template>
   
@@ -24,8 +24,8 @@
         orderDetails: [], // Hier zul je de details van de bestelling bewaren
       };
     },
-    computed: {
-      totalPrice() {
+    methods: {
+      calculateTotalPrice() {
         // Bereken hier de totale prijs op basis van de orderDetails
         return this.orderDetails.reduce((total, item) => total + item.price * item.quantity, 0);
       },
@@ -40,5 +40,4 @@
   <style>
   /* Voeg hier indien nodig stijlen toe voor de bevestigingspagina */
   </style>
-  
   
