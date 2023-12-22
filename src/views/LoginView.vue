@@ -1,26 +1,26 @@
 <template>
   <div class="login-container">
-    <h2 class="titel">Inloggen</h2>
+    <h2 class="titel">{{ titel }}</h2>
 
     <div class="logout">
-      <p v-if="loggedInUser" class="welkom">Welkom terug, {{ loggedInUser }}!</p>
-      <button v-if="loggedInUser" @click="logout" class="login-button">Uitloggen</button>
+      <p v-if="loggedInUser" class="welkom">{{ uitloggen.welkom }} {{ loggedInUser }}!</p>
+      <button v-if="loggedInUser" @click="logout" class="login-button">{{ uitloggen.uitloggen }}</button>
     </div>
 
     <form v-if="!loggedInUser" @submit.prevent="login" class="login-form">
-      <label for="username">Naam:</label>
+      <label for="username">{{ inloggen.naam }}</label>
       <input type="text" id="username" v-model="loginData.username" required>
 
-      <label for="password">Wachtwoord:</label>
+      <label for="password">{{ inloggen.wachtwoord }}</label>
       <input type="password" id="password" v-model="loginData.password" required>
 
       <label>
-        <input type="checkbox" v-model="rememberMe"> Onthoud mij
+        <input type="checkbox" v-model="rememberMe">{{ inloggen.onthouden }}
       </label>
 
-      <button class="login-button" type="submit">Inloggen</button>
+      <button class="login-button" type="submit">{{ inloggen.knop }}</button>
     </form>
-    <p v-if="loginError && !loggedInUser" class="error-message">Gebruikersnaam of wachtwoord is fout. Probeer opnieuw.</p>
+    <p v-if="loginError && !loggedInUser" class="error-message">{{ inloggen.error }}</p>
   </div>
 </template>
 
@@ -28,6 +28,18 @@
 export default {
   data() {
     return {
+      titel: "Inloggen",
+      uitloggen: {
+        welkom: "Welkom terug,",
+        uitloggen: "Uitloggen"
+      },
+      inloggen: {
+        naam: "Naam:",
+        wachtwoord: "Wachtwoord",
+        onthouden: "Onthoud mij",
+        knop: "Inloggen",
+        error: "Gebruikersnaam of wachtwoord is fout. Probeer opnieuw.",
+      },
       loginData: {
         username: '',
         password: '',
