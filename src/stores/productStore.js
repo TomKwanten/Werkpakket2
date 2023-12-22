@@ -38,5 +38,16 @@ export const useProductStore = defineStore({
     getCart() {
       return this.cart;
     },
+    updateStock(productId, quantity) {
+      const selectedProduct = this.selectedProduct;
+
+      if (selectedProduct && selectedProduct.stock !== undefined) {
+        // Voeg hier de logica toe om de voorraad bij te werken
+        selectedProduct.stock -= quantity;
+      } else {
+        console.warn('Geen geselecteerd product of voorraad niet gedefinieerd.');
+      }
+      // Voeg hier andere logica toe afhankelijk van hoe je je voorraad hebt geïmplementeerd
+    },
   },
 });
