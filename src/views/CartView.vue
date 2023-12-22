@@ -1,6 +1,6 @@
 <template>
   <div class="cart-container">
-    <h2>Winkelmandje</h2>
+    <h2 class="titel">{{ titel }}</h2>
     <div v-if="cart.length > 0">
       <ul>
         <li v-for="item in cart" :key="item.id" class="cart-item">
@@ -9,24 +9,24 @@
             <h3>{{ item.title }}</h3>
             <p>{{ item.description }}</p>
             <div class="quantity-controls">
-              <label for="quantity">Aantal:</label>
-              <input type="number" v-model="item.quantity" min="1" @change="updateQuantity(item)">
-              <button @click="removeFromCart(item)" class="remove-button">Verwijderen</button>
+              <label for="quantity">{{ lijst.aantal }}</label>
+              <input class="aantal" type="number" v-model="item.quantity" min="1" @change="updateQuantity(item)">
+              <button @click="removeFromCart(item)" class="remove-button">{{ lijst.verwijderen }}</button>
             </div>
             <div class="cart-item-subtotal">
-              <p>Subtotaal: {{ formatCurrency(subtotal(item)) }}</p>
-              <p>BTW (21%): {{ formatCurrency(subtotal(item) * 0.21) }}</p>
+              <p>{{ lijst.totaal }} {{ formatCurrency(subtotal(item)) }}</p>
+              <p>{{ lijst.btw }} {{ formatCurrency(subtotal(item) * 0.21) }}</p>
             </div>
           </div>
         </li>
       </ul>
       <div class="cart-total">
-        <p>Totale prijs: {{ formatCurrency(totalPrice) }}</p>
-        <p>Totale BTW (21%): {{ formatCurrency(totalPrice * 0.21) }}</p>
+        <p>{{ totaal.totaalprijs }} {{ formatCurrency(totalPrice) }}</p>
+        <p>{{ totaal.totaalbtw }} {{ formatCurrency(totalPrice * 0.21) }}</p>
       </div>
-      <button v-if="cart.length > 0" @click="confirmShopping" class="confirm-button">Bevestigen en betalen</button>
+      <button v-if="cart.length > 0" @click="confirmShopping" class="confirm-button">{{ bevestigknop }}</button>
     </div>
-    <p v-else>Winkelmandje is leeg. Voeg producten toe om door te gaan met afrekenen.</p>
+    <p class="winkelmandleeg" v-else>{{ winkelmandleeg }}</p>
   </div>
 </template>
 
@@ -39,6 +39,19 @@ export default {
     const router = useRouter();
 
     return {
+      titel: "Winkelmandje",
+      lijst: {
+        aantal: "Aantal:",
+        verwijderen: "Verwijderen",
+        totaal: "Subtotaal:",
+        btw: "BTW (21%):",
+      },
+      totaal: {
+        totaalprijs: "Totale prijs:",
+        totaalbtw: "Totale BTW (21%):",
+      },
+      bevestigknop: "Bevestigen en betalen",
+      winkelmandleeg: "Winkelmandje is leeg. Voeg producten toe om door te gaan met afrekenen.",
       router,
     };
   },
@@ -81,11 +94,25 @@ export default {
 </script>
 
 <style scoped>
-/* Stijlen voor de winkelmandpagina */
+.winkelmandleeg {
+  text-align: center;
+}
+.titel {
+  text-align: center;
+}
+.aantal {
+  margin-left: 10px;
+  width: 40px;
+}
 .cart-container {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
   padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cart-item {
@@ -93,6 +120,7 @@ export default {
   margin-bottom: 20px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
+  text-align: right;
 }
 
 .cart-item-image {
@@ -107,6 +135,7 @@ export default {
 .quantity-controls {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .remove-button {
@@ -139,5 +168,7 @@ export default {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  justify-content: flex-end;
+  margin-left: 528px;
 }
 </style>
