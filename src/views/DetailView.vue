@@ -3,6 +3,7 @@
     <section class="product-details" v-if="product">
       <h2 class="product-title">{{ product.title }}</h2>
       <div class="product-content">
+        <!--kan afbeelding hier niet inladen, zelfde code als in het ProductCardComponent-->
         <img :src="product.image" :alt="product.title" class="product">
         <div class="description">
           <p>{{ product.description }}</p>

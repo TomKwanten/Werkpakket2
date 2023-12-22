@@ -1,7 +1,8 @@
-<!--op deze pagina staat geen top 4 van populaire producten, ik heb vanalles geprobeerd paar kreeg steeds
-een foutmelding in de console of de data kon niet worden opgehaald (arrays voor data waren steeds leeg in de console)
-Ik heb de code voor dit in de PopularProductComponent en ProductcardComponent laten staan zodat ik toch nog iets heb -->
-
+<!--op deze pagina staat geen top 4 van populaire producten, ik heb vanalles 
+  geprobeerd paar kreeg steeds een foutmelding in de console of de data 
+  kon niet worden opgehaald (arrays voor data waren steeds leeg in de console)
+  Ik heb de code voor dit in de PopularProductComponent en ProductcardComponent 
+  laten staan zodat ik toch nog iets heb -->
 
 <template>
   <div>
@@ -12,10 +13,8 @@ Ik heb de code voor dit in de PopularProductComponent en ProductcardComponent la
       <p>{{ beschrijving.p2 }}</p>
       <p>{{ beschrijving.p3 }}</p>
       <p>{{ beschrijving.p4 }}</p>
-      <router-link to="/overzicht">Ontdek hier</router-link>
+      <router-link to="/overzicht"><p>{{ link_tekst }}</p></router-link>
     </section>
-
-    <router-view></router-view>
 
     <h2 class="titel-producten">{{ product.titel }}</h2>
     <section class="product-section-start">
@@ -40,6 +39,7 @@ export default {
   components: {
     PopularProductsComponent,
   },
+
   data() {
     return {
       beschrijving: {
@@ -54,7 +54,8 @@ export default {
         titel: "Populaire producten"
       },
       productsData: [], 
-      popularProducts: [], 
+      popularProducts: [],
+      link_tekst: "ontdek hier" 
     };
   },
 

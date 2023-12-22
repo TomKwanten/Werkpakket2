@@ -18,7 +18,10 @@ $font-sm: 15px;
     text-align: center;
     background-color: $secundary-color;
     max-width: 80%;
-    padding: 20 20 10; 
+    padding: 10px 20px 20px 20px;
+    border-bottom-right-radius: $border-afronding;
+    border-bottom-left-radius: $border-afronding; 
+
 }
 
 body {
@@ -304,7 +307,7 @@ footer {
     text-align: center;
     background-color: $secundary-color;
     max-width: 80%;
-    padding: 20 20 10 20;
+    padding: 20px 20px 10px 20px;
     color: $text-color;
     border-top-right-radius: $border-afronding;
     border-top-left-radius: $border-afronding;
@@ -400,7 +403,7 @@ input[type="submit"] {
 
             .price {
                 font-weight: bold;
-                margin-top: 30px;
+                margin-top: 300px;
             }
 
             .add-to-cart {

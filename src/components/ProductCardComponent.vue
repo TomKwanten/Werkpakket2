@@ -6,40 +6,39 @@
     </section>
 
     <form class="container-form" @submit.prevent="filterProducts">
-      <label for="product-type">Soort product:</label>
+      <label for="product-type">{{ type.label }}</label>
       <select v-model="filter.productType" id="product-type">
-        <option value="alle">Alle</option>
-        <option value="hoedjes">Hoedjes en petten</option>
-        <option value="brillen">Rave brillen</option>
-        <option value="tasjes">Rave tasjes</option>
-        <option value="waaiers">Rave waaiers</option>
+        <option value="alle">{{ type.alle }}</option>
+        <option value="hoedjes">{{ type.hoeden }}</option>
+        <option value="brillen">{{ type.brillen }}</option>
+        <option value="tasjes">{{ type.tassen }}</option>
+        <option value="waaiers">{{ type.waaiers }}</option>
       </select>
 
-      <label for="product-color">Kleur:</label>
-      <select v-model="filter.productColor" id="product-color">
-        <option value="alle">Alle</option>
-        <option value="zwart">Zwart</option>
-        <option value="blauw">Blauw</option>
-        <option value="overig">Overige kleuren</option>
+      <label for="product-color">{{ kleur.label }}</label>
+      <select v-model="filter.productColor" id="product-color" class="form">
+        <option value="alle">{{ kleur.alle }}</option>
+        <option value="zwart">{{ kleur.zwart }}</option>
+        <option value="blauw">{{ kleur.blauw }}</option>
+        <option value="overig">{{ kleur.overige }}</option>
       </select>
-
-      <button type="submit">Filteren</button>
+      <button type="submit" class="filterknop">{{ button.filter }}</button>
     </form>
 
     <section class="container-product1">
       <div v-for="product in paginatedProducts" :key="product.id" class="product">
         <router-link :to="`/product/${product.id}`" @click="updateSelectedProduct(product)">
-          <img :src="product.image" :alt="product.title">
-          <h3>{{ product.title }}</h3>
+          <img class="image" :src="product.image" :alt="product.title">
+          <h3 class="titel">{{ product.title }}</h3>
           <span class="price">{{ product.price }}</span>
         </router-link>
       </div>
     </section>
 
     <div class="pagination">
-      <button @click="changePage(-1)" :disabled="currentPage === 1">Vorige</button>
+      <button @click="changePage(-1)" :disabled="currentPage === 1">{{ button.terug }}</button>
       <span>{{ currentPage }}</span>
-      <button @click="changePage(1)" :disabled="currentPage === totalPages">Volgende</button>
+      <button @click="changePage(1)" :disabled="currentPage === totalPages">{{ button.verder }}</button>
     </div>
   </div>
 </template>
@@ -55,7 +54,7 @@ export default {
     productsData: Array,
   },
   mounted() {
-    console.log(this.productsData); // Voeg dit toe
+    console.log(this.productsData);
   },
   data() {
     return {
@@ -67,6 +66,26 @@ export default {
       filter: {
         productType: "alle",
         productColor: "alle",
+      },
+      type: {
+        label: "Soort product:",
+        alle: "Alles",
+        hoeden: "Hoedjes en petten",
+        brillen: "Rave brillen",
+        tassen: "Rave tasjes",
+        waaiers: "Rave waaiers",
+      },
+      kleur: {
+        label: "Kleur:",
+        alle: "Alles",
+        zwart: "Zwart",
+        blauw: "Blauw",
+        overige: "Overige kleuren",
+      },
+      button: {
+        filter: "Filteren",
+        terug: "Vorige",
+        verder: "Volgende",
       },
       products: productsData.products,
       itemsPerPage: 8,
@@ -110,4 +129,40 @@ export default {
 </script>
 
 <style scoped>
+.image{ 
+  width: auto;
+  height: auto;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+.pagination button {
+  margin: 0 15px; 
+  border: 2px solid  #cd1d66;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+  padding: 5px 15px;
+}
+.pagination button:disabled {
+  background-color: #ccc; 
+  cursor: not-allowed;
+}
+
+.form {
+  margin-bottom: 12px;
+}
+.filterknop{
+  border: 2px solid  #cd1d66;
+  border-radius: 5px;
+  background-color: #d6226d;
+  padding: 5px 20px 5px 20px;
+}
+
+
 </style>

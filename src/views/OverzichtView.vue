@@ -1,15 +1,15 @@
 <template>
-    <div id="app">
-      <ProductCardComponent />
-    </div>
-  </template>
+  <div id="app">
+    <ProductCardComponent />
+  </div>
+</template>
   
-  <script>
-  import ProductCardComponent from '../components/ProductCardComponent.vue';
+<script>
+import ProductCardComponent from '../components/ProductCardComponent.vue';
   
-  export default {
-    components: {
-      ProductCardComponent,
-    },
-  };
-  </script>
+export default {
+  components: {
+    ProductCardComponent,
+  },
+};
+</script>
