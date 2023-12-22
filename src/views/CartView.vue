@@ -79,8 +79,6 @@ export default {
     },
     confirmShopping() {
       console.log('Winkelen bevestigen...');
-      // Hier kun je de afhandeling voor het bevestigen van het winkelen toevoegen
-      // Bijvoorbeeld, je kunt de gebruiker doorsturen naar de checkoutpagina:
       this.router.push('/checkout');
     },
     subtotal(item) {

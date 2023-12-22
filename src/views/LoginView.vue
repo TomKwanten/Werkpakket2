@@ -80,7 +80,6 @@ export default {
 </script>
 
 <style scoped>
-/* Stijlen voor de inlogpagina */
 .welkom{
   text-align: center;
 }

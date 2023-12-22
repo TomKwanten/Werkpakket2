@@ -125,15 +125,12 @@ export default {
   },
   methods: {
     submitOrder() {
-      // Plaats hier de logica om de bestelling te verwerken, inclusief de adres- en facturatiegegevens
       console.log('Bestelling geplaatst met adresgegevens:', this.shippingInfo);
       console.log('Facturatiegegevens:', this.billingInfo);
-      // Reset het winkelmandje na het plaatsen van de bestelling
       useProductStore().resetCart();
       this.$router.push('/bevestiging');
     },
     toggleBillingForm() {
-      // Schakel het facturatiegegevens formulier in/uit op basis van de checkbox
       if (!this.differentBilling) {
         this.billingInfo = {
           name: '',
